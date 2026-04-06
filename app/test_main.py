@@ -55,7 +55,7 @@ def test_show_cat_dog_to_human_age(cat: int, dog: int, result: list) -> None:
     "cat, dog, expected_exception",
     [
         pytest.param(
-            -5, -5,
+            15, -5,
             ValueError,
             id="test on Negative number"
         ),
