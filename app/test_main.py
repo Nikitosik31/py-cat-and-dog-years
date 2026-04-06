@@ -49,7 +49,7 @@ import pytest
 )
 
 def test_show_cat_dog_to_human_age(cat: int, dog: int, result: list) -> None:
-     assert get_human_age(cat, dog) == result
+    assert get_human_age(cat, dog) == result
 
 
 @pytest.mark.parametrize(
@@ -67,7 +67,6 @@ def test_show_cat_dog_to_human_age(cat: int, dog: int, result: list) -> None:
         )
     ]
 )
-
 
 def test_show_expected_exception(
         cat: int,
