@@ -1,24 +1,18 @@
 def get_human_age(cat_age: int, dog_age: int) -> list:
-    cat_and_dog_in_human_years = []
-    if cat_age < 15:
-        cat_and_dog_in_human_years.append(0)
-    elif cat_age < 24:
-        cat_and_dog_in_human_years.append(1)
+    def convert_age_to_human(age: int, divisor: int ) -> int:
+        if not isinstance(age, int):
+            raise TypeError
+        elif age < 0:
+            raise ValueError
+        elif age < 15:
+            return 0
+        elif age < 24:
+            return 1
+        elif age >= 24:
+            return (
+            (2 + (age - 24) // divisor)
+            )
 
-    elif cat_age >= 24:
-        human_age = (
-            (2 + (cat_age - 24) // 4)
-        )
-        cat_and_dog_in_human_years.append(human_age)
-
-    if dog_age < 15:
-        cat_and_dog_in_human_years.append(0)
-    elif dog_age < 24:
-        cat_and_dog_in_human_years.append(1)
-    elif dog_age >= 24:
-        human_age = (
-            (2 + (dog_age - 24) // 5)
-        )
-        cat_and_dog_in_human_years.append(human_age)
-
-    return cat_and_dog_in_human_years
+    convert_age_cat_to_human = convert_age_to_human(cat_age, 4)
+    convert_age_dog_to_human = convert_age_to_human(dog_age, 5)
+    return [convert_age_cat_to_human, convert_age_dog_to_human]
