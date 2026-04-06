@@ -48,7 +48,7 @@ import pytest
     ]
 )
 
-def test_show_cat_dog_to_human_age(cat, dog, result) -> None:
+def test_show_cat_dog_to_human_age(cat: int, dog: int, result: list) -> None:
      assert get_human_age(cat, dog) == result
 
 
@@ -70,9 +70,9 @@ def test_show_cat_dog_to_human_age(cat, dog, result) -> None:
 
 
 def test_show_expected_exception(
-        cat,
-        dog,
-        expected_exception
+        cat: int,
+        dog: int,
+        expected_exception: type[Exception]
 ) -> None:
     with pytest.raises(expected_exception):
         get_human_age(cat, dog)
